@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
         cam = Camera.main;
 
         newRotation = transform.rotation;
-        rotateAmout = 1;
+        rotateAmout = 0.5f;
     }
     // Start is called before the first frame update
     void Start()
