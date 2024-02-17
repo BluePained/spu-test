@@ -43,6 +43,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8944153451448536285}
   - component: {fileID: 646022841613462000}
+  - component: {fileID: 7715424515441331097}
+  - component: {fileID: 8806999907448279997}
+  - component: {fileID: 8178151271323697550}
   m_Layer: 7
   m_Name: House
   m_TagString: Building
@@ -91,6 +94,70 @@ MonoBehaviour:
   unitTimer: 0
   curUnitProgress: 0
   curUnitWaitTime: 0
+--- !u!65 &7715424515441331097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965423241774293587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.51, y: 7.91, z: 10.07}
+  m_Center: {x: -1.23, y: 2.97, z: 0}
+--- !u!54 &8806999907448279997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965423241774293587}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!208 &8178151271323697550
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965423241774293587}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.665, y: 3.605, z: 3.82}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.23, y: 2.56, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &427495990642000782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,11 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5357006586782621341, guid: a5bbf19176c400c45880b227fbf3f1e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 5357006586782621341, guid: a5bbf19176c400c45880b227fbf3f1e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -254.25
+      value: -0.14998627
       objectReference: {fileID: 0}
     - target: {fileID: 5357006586782621341, guid: a5bbf19176c400c45880b227fbf3f1e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -196,11 +263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445380, guid: 0f2c24d6d5629e348b89418d85ed89ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 445380, guid: 0f2c24d6d5629e348b89418d85ed89ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -254.00002
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 445380, guid: 0f2c24d6d5629e348b89418d85ed89ca, type: 3}
       propertyPath: m_LocalRotation.w
