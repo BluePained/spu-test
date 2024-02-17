@@ -11,8 +11,23 @@ public enum UnitState
     Die
 }
 
+[System.Serializable]
+public struct UnitCost
+{
+    public int food;
+    public int wood;
+    public int gold;
+    public int stone;
+}
+
 public class Unit : MonoBehaviour
 {
+    [SerializeField] private UnitCost unitCost;
+    public UnitCost UnitCost { get { return unitCost; } }
+
+    //time for increasing progress 1% for this unit, less is faster
+    [SerializeField] private float unitWaitTime = 0.1f;
+    public float UnitWaitTime { get { return unitWaitTime; } }
     [SerializeField] private int id;
     public int ID { get { return id; } set { id = value; } }
 
