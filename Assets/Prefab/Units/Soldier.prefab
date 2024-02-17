@@ -5259,6 +5259,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a51a80554247ec489b3c80cd4070413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitCost:
+    food: 50
+    wood: 10
+    gold: 20
+    stone: 0
+  unitWaitTime: 0.1
   id: 0
   unitName: 
   unitPic: {fileID: 0}
