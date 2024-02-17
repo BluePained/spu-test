@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UnitSelect : MonoBehaviour
 {
+    [SerializeField]
+    private Building curBuilding; //current selected single building
+    public Building CurBuilding { get { return curBuilding; } }
     [SerializeField]
     private LayerMask layerMask;
 
@@ -36,6 +40,8 @@ public class UnitSelect : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             ClearEverything();
         }
 
@@ -51,6 +57,11 @@ public class UnitSelect : MonoBehaviour
         curUnit = hit.collider.GetComponent<Unit>();
 
         curUnit.ToggleSelectionVisual(true);
+
+        if(GameManager.instance.MyFaction.IsMyUnit(curUnit))
+        {
+            ShowUnit(curUnit);
+        }
     }
 
     private void TrySelect(Vector2 screenPos)
@@ -80,5 +91,12 @@ public class UnitSelect : MonoBehaviour
     {
         ClearAllSelectionVisual();
         curUnit = null;
+        InfoManager.instance.ClearAllInfo();
     }
+
+    private void ShowUnit(Unit u)
+    {
+        InfoManager.instance.ShowAllInfo(u);
+    }
+
 }
