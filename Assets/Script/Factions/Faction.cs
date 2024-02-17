@@ -22,6 +22,15 @@ public class Faction : MonoBehaviour
     [SerializeField] private Nation nation;
     public Nation Nation { get { return nation; } }
 
+    [SerializeField] private Transform unitsParent;
+    public Transform UnitsParent { get { return unitsParent; } }
+
+    [SerializeField] private Transform buildingsParent;
+    public Transform BuildingsParent { get { return buildingsParent; } }
+
+    [SerializeField] private Transform ghostBuildingParent;
+    public Transform GhostBuildingParent { get { return ghostBuildingParent; } }
+
     [Header("Resources")]
     [SerializeField] private int food;
     public int Food { get { return food; } set { food = value; } }
@@ -77,4 +86,28 @@ public class Faction : MonoBehaviour
     {
         return aliveBuildings.Contains(b);
     }
+    public bool CheckBuildingCost(Building building)
+    {
+        if (food < building.StructureCost.food)
+            return false;
+
+        if (wood < building.StructureCost.wood)
+            return false;
+
+        if (gold < building.StructureCost.gold)
+            return false;
+
+        if (stone < building.StructureCost.stone)
+            return false;
+
+        return true;
+    }
+    public void DeductBuildingCost(Building building)
+        {
+            food -= building.StructureCost.food;
+            wood -= building.StructureCost.wood;
+            gold -= building.StructureCost.gold;
+            stone -= building.StructureCost.stone;
+        }
+    
 }

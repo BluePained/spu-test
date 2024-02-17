@@ -8,6 +8,8 @@ public enum UnitState
     Idle,
     Move,
     Attack,
+    MoveToBuild,
+    BuildProgress,
     Die
 }
 
@@ -82,6 +84,11 @@ public class Unit : MonoBehaviour
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+
+        if (IsBuilder)
+        {
+            builder = GetComponent<Builder>();
+        }
     }
     // Start is called before the first frame update
     void Start()

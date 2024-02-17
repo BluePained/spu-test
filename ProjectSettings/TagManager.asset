@@ -8,6 +8,7 @@ TagManager:
   - Building
   - Ground
   - Resource
+  - Ghostbuilding
   layers:
   - Default
   - TransparentFX
